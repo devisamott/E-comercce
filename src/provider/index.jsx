@@ -1,28 +1,47 @@
 import { createContext, useState, useEffect } from 'react';
+import { GetProducts } from '../../src/api/getDataFromApi';
 
-// Crear el contexto
 export const DataContext = createContext();
 
-// Crear el proveedor
 export function Provider({ children }) {
-    const images = [
-        'src/screens/home/slider/imgs/bannerReloj.jpg',
-        'src/screens/home/slider/imgs/bannerReloj2.jpg',
-        'src/screens/home/slider/imgs/bannerTv.jpg',
-        'src/screens/home/slider/imgs/bannerXbox.jpg'
-    ];
-    const interval = 3000;
-
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [imagenes, setImages] = useState([]);
 
     useEffect(() => {
-        const next = (currentIndex + 1) % images.length;
-        const id = setTimeout(() => setCurrentIndex(next), interval);
-        return () => clearTimeout(id);
-    }, [currentIndex, images.length, interval]);
+        dataProduct();
+    }, []);
+    
+    const dataProduct = async () => {
+            const result = await GetProducts();
+            setImages(result);
+    };
+    const getFirstProductPerCategory = (products) => {
+        if (!Array.isArray(products)) {
+            return [];
+        }
+        const categoryMap = new Map();
+        products.forEach((product) => {
+            if (!categoryMap.has(product.category.id)) {
+                categoryMap.set(product.category.id, product);
+            }
+        });
+        return Array.from(categoryMap.values());
+    };
+
+    const firstProducts = getFirstProductPerCategory(imagenes);
+
+    useEffect(() => {
+        if (firstProducts.length > 0) {
+            const intervalId = setInterval(() => {
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % firstProducts.length);
+            }, 3000);
+
+            return () => clearInterval(intervalId);
+        }
+    }, [firstProducts.length]);
 
     return (
-        <DataContext.Provider value={{ currentIndex, setCurrentIndex, images }}>
+        <DataContext.Provider value={{ currentIndex, setCurrentIndex, firstProducts }}>
             {children}
         </DataContext.Provider>
     );

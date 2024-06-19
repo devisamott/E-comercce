@@ -1,15 +1,21 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { DataContext } from '../../../provider/index';
 import './slider.css';
 
 export function Slider() {
-    const { currentIndex, setCurrentIndex, images } = useContext(DataContext);
+    const { currentIndex, setCurrentIndex, firstProducts } = useContext(DataContext);
+
+    const currentProduct = firstProducts[currentIndex];
+    const imageUrl = currentProduct.images[0];
 
     return (
         <div className="slider">
-            <img src={images[currentIndex]} alt={`slide-${currentIndex}`} />
+            <img 
+                src={imageUrl} 
+                alt={currentProduct.title} 
+            />
             <div className="navigation-dots">
-                {images.map((_, index) => (
+                {firstProducts.map((_, index) => (
                     <span
                         key={index}
                         className={`dot ${currentIndex === index ? 'active' : ''}`}
