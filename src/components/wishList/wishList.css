@@ -1,0 +1,7 @@
+.favorite {
+    display: flex;
+    position: relative;
+    top: 0.5rem;
+    left: 680px;
+    cursor: pointer;
+}

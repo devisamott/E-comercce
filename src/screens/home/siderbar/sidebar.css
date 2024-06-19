@@ -1,0 +1,28 @@
+.sidebar-content{
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight:400;
+    top: 0.5rem;
+    left: 50px;
+    width: 215px;
+    border-right: 1px solid #c4c4c4;
+}
+.sidebar-content li {
+    display: flex;
+    position: relative;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+.arrow {
+    display: inline-block;
+    position: relative;
+    left: 45px;
+}
+.arrow1{
+    display: inline-block;
+    position: relative;
+    left: 75px;
+}
