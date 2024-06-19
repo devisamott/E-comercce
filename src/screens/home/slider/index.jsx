@@ -5,6 +5,10 @@ import './slider.css';
 export function Slider() {
     const { currentIndex, setCurrentIndex, firstProducts } = useContext(DataContext);
 
+    if (!firstProducts || firstProducts.length === 0) {
+        return <div>Loading...</div>;
+    }
+
     const currentProduct = firstProducts[currentIndex];
     const imageUrl = currentProduct.images[0];
 

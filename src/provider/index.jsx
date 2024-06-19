@@ -15,8 +15,10 @@ export function Provider({ children }) {
             const result = await GetProducts();
             setImages(result);
     };
+    
     const getFirstProductPerCategory = (products) => {
         if (!Array.isArray(products)) {
+            console.error('Expected an array but received:', products);
             return [];
         }
         const categoryMap = new Map();
