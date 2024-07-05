@@ -10,7 +10,7 @@ export function FlashSales() {
 
   const allProducts = Object.values(cheapestProducts).flat();
   const totalItems = allProducts.length;
-  const visibleItems = 8; 
+  const visibleItems = 9; 
 
   useEffect(() => {
     if (isTransitioning) {
