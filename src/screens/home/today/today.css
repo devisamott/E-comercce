@@ -1,0 +1,32 @@
+.cuadradito{
+    display: inline-block;
+    bottom: 80px;
+    position: relative;
+    width: 18px;
+    height: 42px;
+    background-color: rgb(255, 50, 50);
+    left: 90px;
+    border-radius: 5px;
+}
+.hoy{
+    display: flex;
+    position: relative;
+    bottom: 125px;
+    left: 120px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight:400;
+    font-size: 14px;
+    color: rgb(255, 50, 50);
+}
+.flash{
+    position: relative;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 35px;
+    font-style: normal;
+    bottom: 130px;
+    left: 90px;
+
+}

@@ -1,0 +1,80 @@
+.container,
+.carousel,
+.carousel-item,
+.button-container,
+.carousel-button {
+    box-sizing: border-box;
+}
+
+.container,
+.carousel,
+.carousel-item {
+    width: 100%;
+    overflow: hidden;
+}
+
+.flash-sales-container {
+    position: relative;
+    bottom: 300px;
+    left: 90px;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(calc(var(--index) * -100% / var(--visible-items)));
+}
+
+.carousel-track.no-transition {
+    transition: none;
+}
+
+.carousel-item {
+    min-width: 20%;
+    padding: 20px 10px;
+    text-align: center;
+    white-space: normal;
+}
+
+.carousel-item h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    word-wrap: break-word;
+}
+
+.carousel-item p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: red;
+}
+
+.containe-button {
+    display: flex;
+    position: relative;
+    left: 66rem;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.carousel-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee;
+    color: #807f7f;
+    border: none;
+    width: 46px;
+    height: 46px;
+    cursor: pointer;
+    font-size: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.img-flash {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}

@@ -5,12 +5,13 @@ import './slider.css';
 export function Slider() {
     const { currentIndex, setCurrentIndex, firstProducts } = useContext(DataContext);
 
+
     if (!firstProducts || firstProducts.length === 0) {
         return <div>Loading...</div>;
     }
 
     const currentProduct = firstProducts[currentIndex];
-    const imageUrl = currentProduct.images[0];
+    const imageUrl = currentProduct.category.image
 
     return (
         <div className="slider">
@@ -22,7 +23,7 @@ export function Slider() {
                 {firstProducts.map((_, index) => (
                     <span
                         key={index}
-                        className={`dot ${currentIndex === index ? 'active' : ''}`}
+                        className={`dot ${currentIndex % firstProducts.length === index ? 'active' : ''}`}
                         onClick={() => setCurrentIndex(index)}
                     ></span>
                 ))}

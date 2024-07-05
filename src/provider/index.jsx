@@ -6,28 +6,45 @@ export const DataContext = createContext();
 export function Provider({ children }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [imagenes, setImages] = useState([]);
+    const [cheapestProducts, setCheapestProducts] = useState({});
 
     useEffect(() => {
         dataProduct();
     }, []);
     
     const dataProduct = async () => {
-            const result = await GetProducts();
-            setImages(result);
+        const result = await GetProducts();
+        setImages(result);
+        setCheapestProducts(getCheapestProductsPerCategory(result));
     };
     
-    const getFirstProductPerCategory = (products) => {
+    const groupProductsByCategory = (products) => {
         if (!Array.isArray(products)) {
-            console.error('Expected an array but received:', products);
-            return [];
+            return {};
         }
-        const categoryMap = new Map();
+        const categoryMap = {};
         products.forEach((product) => {
-            if (!categoryMap.has(product.category.id)) {
-                categoryMap.set(product.category.id, product);
+            const categoryId = product.category.id;
+            if (!categoryMap[categoryId]) {
+                categoryMap[categoryId] = [];
             }
+            categoryMap[categoryId].push(product);
         });
-        return Array.from(categoryMap.values());
+        return categoryMap;
+    };
+
+    const getFirstProductPerCategory = (products) => {
+        const categoryMap = groupProductsByCategory(products);
+        return Object.values(categoryMap).map(productsInCategory => productsInCategory[0]);
+    };
+
+    const getCheapestProductsPerCategory = (products) => {
+        const categoryMap = groupProductsByCategory(products);
+        Object.keys(categoryMap).forEach((categoryId) => {
+            categoryMap[categoryId].sort((a, b) => a.price - b.price);
+            categoryMap[categoryId] = categoryMap[categoryId].slice(0, 2);
+        });
+        return categoryMap;
     };
 
     const firstProducts = getFirstProductPerCategory(imagenes);
@@ -43,7 +60,12 @@ export function Provider({ children }) {
     }, [firstProducts.length]);
 
     return (
-        <DataContext.Provider value={{ currentIndex, setCurrentIndex, firstProducts }}>
+        <DataContext.Provider value={{ 
+            currentIndex,
+            setCurrentIndex,
+            firstProducts,
+            cheapestProducts 
+         }}>
             {children}
         </DataContext.Provider>
     );

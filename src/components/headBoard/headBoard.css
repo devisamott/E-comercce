@@ -1,10 +1,17 @@
 .container {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;  
     border-bottom: 0.5px solid #c4c4c4; 
     font-family: "Poppins", sans-serif;
     font-weight: 200;
     font-style: normal;
+    z-index: 1000;
+    position: fixed; /* Fijar la posición */
+    top: 39px; /* Alinear en la parte superior */
+    left: 0; /* Alinear en la parte izquierda */
+    width: 100%; /* Ancho completo */
+    background-color: #fff; /* Fondo blanco para el contenedor */
+    padding: 10px 20px; 
 }
 
 .exclusive {
