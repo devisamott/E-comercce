@@ -1,0 +1,16 @@
+[
+    
+        {
+          "id": 30,
+          "title": "Parlante Novedoso",
+          "price": 100,
+          "description": "Parlante negro, con sonido sorround, limpio y de buena calidad",
+          "images": [
+            "src/api/jsonImages/img/parlante.png"
+           ],
+            "category": {
+            "id": 28,
+            "name": "Electronics"
+          }
+        }
+]

@@ -1,0 +1,142 @@
+.container-featured{
+    font-family: "Poppins", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+.box-featured{
+    display: flex;
+    bottom: 220px;
+    position: relative;
+    width: 18px;
+    height: 42px;
+    background-color: #DB4444;
+    left: 95px;
+    border-radius: 5px;
+}
+.name-section-featured{
+    display: flex;
+    position: relative;
+    font-size: 16px;
+    bottom: 270px;
+    left: 140px;
+    color: #DB4444;
+}
+.title-section-featured{
+    position: relative;
+    font-size: 34px;
+    font-style: normal;
+    bottom: 250px;
+    left: 92px;
+    color: rgb(54, 54, 54);
+}
+.grid-featured{
+    display: flex;
+    position: relative;
+    bottom:230px;
+    left: 77px;
+}
+.item{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 60px);
+    gap: 30px;
+    padding: 1rem;
+    width: 1158px;
+    height: 600px;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius:3px;
+}
+.item1{
+    grid-column:1/5 ;
+    grid-row: 1/7;
+}
+.item2{
+    grid-column: 5/9;
+    grid-row: 1/4;
+}
+.item3{
+    grid-column:5/7;
+    grid-row: 4/7;
+}
+
+.item4{
+    grid-column:7/9;
+    grid-row: 4/7;
+}
+
+.product-title{
+    color: aliceblue;
+    font-size: 24px;
+}
+.product-description{
+    color: aliceblue;
+    font-size: 14px;
+}
+.boton-shop-now{
+    border: none;
+    color: #FFFFFF;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #FFFFFF;
+}
+.title1 {
+    display: flex;
+    position: relative;
+    bottom: 180px;
+    left: 28px;
+}
+.descrip1 {
+    display: flex;
+    position: relative;
+    bottom: 195px;
+    left: 30px;
+    width: 300px;
+}
+.boton1 {
+    display: flex;
+    position: relative;
+    bottom: 190px;
+    left: 30px;
+}
+.title2{
+    display: flex;
+    position: relative;
+    bottom: 175px;
+    left: 20px;
+}
+.descrip2{
+    display: flex;
+    position: relative;
+    bottom: 195px;
+    left: 20px;
+    width: 280px;
+}
+.boton2{
+    display: flex;
+    position: relative;
+    bottom: 200px;
+    left: 21px;
+}
+.title3, .title4{
+    display: flex;
+    position: relative;
+    bottom: 135px;
+    left: 20px;
+} 
+.descrip3, .descrip4{
+    display: flex;
+    position: relative;
+    bottom: 160px;
+    left: 20px;
+}
+.boton3, .boton4{
+    display: flex;
+    position: relative;
+    bottom: 170px;
+    left: 15px;
+}

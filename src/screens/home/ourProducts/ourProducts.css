@@ -1,0 +1,71 @@
+.container-categories-wrapper{
+    font-family: "Inter", sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+.products-horizontal {
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    gap: 23px;
+    grid-auto-rows: 350px;
+    width:100px;
+}
+.container-img-our-products {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    bottom: 100px;
+    left: 100px;
+    cursor: pointer;
+}
+.img-our-products {
+    width: 270px;
+    height: 230px;
+    border-radius: 4px;
+}
+.cuadro-our-products{
+    display: flex;
+    bottom: 100px;
+    position: relative;
+    width: 18px;
+    height: 42px;
+    background-color: #DB4444;
+    left: 100px;
+    border-radius: 5px;
+}
+.name-section{
+    display: flex; 
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    bottom: 150px;
+    left: 130px;
+    color: #DB4444;
+}
+.description-section{
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 35px;
+    font-style: normal;
+    bottom: 152px;
+    left: 100px;
+}
+.botons-our-products{
+    display: flex;
+    position: relative;
+    top: 20px;
+    left: 90px;
+    z-index: 100;
+}
+.container-boton-all{
+    display: flex;
+    position: relative;
+    bottom: 50px;
+    left: 90px;
+}

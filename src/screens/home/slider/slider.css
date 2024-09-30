@@ -7,6 +7,7 @@
     height: 280px;
     margin: auto;
     overflow: hidden;
+    border-radius: 4px;
 }
 
 .slider img {
@@ -37,4 +38,16 @@
     border: 2px solid rgb(240, 240, 240);
     width: 7px;
     height: 7px;
+}
+.button-shop-now {
+    display: flex;
+    position: relative;
+    bottom: 20px;
+    right: 400px;
+    border: none;
+    color: #ffffff;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #ffffff;
 }

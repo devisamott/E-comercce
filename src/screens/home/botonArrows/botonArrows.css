@@ -1,0 +1,25 @@
+.container-button {
+    display: inline-flex;
+    position: relative;
+    left: 66.5rem;
+    margin-bottom: 20px;
+
+}
+
+.carousel-button {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee;
+    color: #5c5c5c;
+    border: none;
+    width: 46px;
+    height: 46px;
+    cursor: pointer;
+    font-size: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+    cursor: pointer;
+}

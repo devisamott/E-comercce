@@ -1,0 +1,53 @@
+.services-wrapper {
+    display: flex;
+    position: relative;
+    bottom: 160px;
+    justify-content: center; 
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    gap: 100px;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px; 
+}
+
+.container-services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray; 
+    border-radius: 50%; 
+    width: 100px; 
+    height: 100px;
+    position: relative;
+}
+
+.container-services .inner-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; 
+    border-radius: 50%; 
+    width: 70px; 
+    height: 70px;
+}
+
+.service-text {
+    font-weight: bold;
+    font-size: 16px; 
+    color: black;
+    margin: 0;
+}
+
+.service-descrip {
+    font-size: 14px;
+    color: #6c6c6c;
+    margin: 0;
+}

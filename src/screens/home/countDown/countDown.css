@@ -1,32 +1,28 @@
 .countdown {
     display: flex;
     position: relative;
-   font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 600;
     bottom: 230px;
-    left: 330px;
+    left: 315px;
     font-size: 35px;
 }
-
 .titles {
     display: flex;
     position: relative;
     font-family: "Inter", sans-serif;
     font-weight: 600;
-    bottom: 230px;
-    left: 315px;
+    bottom: 240px;
+    left: 310px;
     font-size: 10px;
     margin-bottom: 10px;
 }
-
 .titles span {
-    margin: 0 25px;
+    margin: 0 26px;
 }
-
 .countdown .time {
-    margin: 0 5px;
+    margin: 13px 20px;
 }
-
 .countdown .points {
     color: rgb(252, 64, 64);
     margin: 0 8px;

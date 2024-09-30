@@ -1,12 +1,17 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/prop-types */
 import { createContext, useState, useEffect } from 'react';
-import { GetProducts } from '../../src/api/getDataFromApi';
+import { GetProducts } from '../../src/api/getDataFromApi/index';
 
 export const DataContext = createContext();
 
-export function Provider({ children }) {
+export function Provider({ children }) {    
+    const [ourProducts, setOurProducts] = useState([]);
+    const [onSaleProducts, setOnSaleProducts] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [imagenes, setImages] = useState([]);
-    const [cheapestProducts, setCheapestProducts] = useState({});
+    const [shopNowProducts, setShopNowProducts] = useState([]);
+    const [thisMonth, setThisMonth] = useState([]);
+    const [featured, setFeatured] = useState([]);
 
     useEffect(() => {
         dataProduct();
@@ -14,58 +19,54 @@ export function Provider({ children }) {
     
     const dataProduct = async () => {
         const result = await GetProducts();
-        setImages(result);
-        setCheapestProducts(getCheapestProductsPerCategory(result));
-    };
+        setFeatured(getFeatured(result));
+        setOurProducts(getOurProducts(result));
+        setShopNowProducts(getShopNowProducts(result));
+        setOnSaleProducts(getOnSaleProducts(result));
+        setThisMonth(getThisMonth(result));
+    }
+
+    const getShopNowProducts = (products) => {
+        return products.filter(product => {
+            return product.categoria && product.categoria._id === "66e8a81d82582911ebfd9094"; 
+        });
+    }
+
+    const getOnSaleProducts = (products) => {
+        return products.filter(product => product.enDescuento)
+    }
+
+    const getThisMonth = (products) => {
+        return products.filter(product => {
+            return product.categoria && product.categoria._id === "66ed89e8b0a30a2249773fac"
+            
+        })
+    }
+
+    const getOurProducts = (products) => {
+        return products.filter(product => {
+            return product.categoria && product.categoria._id === "66ed9f42b0a30a2249773ff9"
+        })
+    }
+
+    const getFeatured = (products) => {
+        return products.filter(product => {
+            return product.categoria && product.categoria._id === "66f16e748b2101647cdc518f"
+
+        })
+    }
+
     
-    const groupProductsByCategory = (products) => {
-        if (!Array.isArray(products)) {
-            return {};
-        }
-        const categoryMap = {};
-        products.forEach((product) => {
-            const categoryId = product.category.id;
-            if (!categoryMap[categoryId]) {
-                categoryMap[categoryId] = [];
-            }
-            categoryMap[categoryId].push(product);
-        });
-        return categoryMap;
-    };
-
-    const getFirstProductPerCategory = (products) => {
-        const categoryMap = groupProductsByCategory(products);
-        return Object.values(categoryMap).map(productsInCategory => productsInCategory[0]);
-    };
-
-    const getCheapestProductsPerCategory = (products) => {
-        const categoryMap = groupProductsByCategory(products);
-        Object.keys(categoryMap).forEach((categoryId) => {
-            categoryMap[categoryId].sort((a, b) => a.price - b.price);
-            categoryMap[categoryId] = categoryMap[categoryId].slice(0, 2);
-        });
-        return categoryMap;
-    };
-
-    const firstProducts = getFirstProductPerCategory(imagenes);
-
-    useEffect(() => {
-        if (firstProducts.length > 0) {
-            const intervalId = setInterval(() => {
-                setCurrentIndex((prevIndex) => (prevIndex + 1) % firstProducts.length);
-            }, 3000);
-
-            return () => clearInterval(intervalId);
-        }
-    }, [firstProducts.length]);
-
     return (
         <DataContext.Provider value={{ 
             currentIndex,
             setCurrentIndex,
-            firstProducts,
-            cheapestProducts 
-         }}>
+            onSaleProducts,
+            shopNowProducts,
+            thisMonth,
+            ourProducts,
+            featured,
+        }}>
             {children}
         </DataContext.Provider>
     );

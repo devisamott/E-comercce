@@ -4,22 +4,22 @@
     position: relative;
     width: 18px;
     height: 42px;
-    background-color: rgb(255, 50, 50);
+    background-color: #DB4444;
     left: 90px;
     border-radius: 5px;
 }
-.hoy{
+.headers{
     display: flex;
     position: relative;
-    bottom: 125px;
+    bottom: 130px;
     left: 120px;
     font-family: "Poppins", sans-serif;
     font-style: normal;
-    font-weight:400;
-    font-size: 14px;
-    color: rgb(255, 50, 50);
+    font-weight: 600;
+    font-size: 16px;
+    color: #DB4444;
 }
-.flash{
+.title-section{
     position: relative;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;

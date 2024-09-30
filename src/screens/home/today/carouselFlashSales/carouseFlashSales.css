@@ -1,8 +1,6 @@
 .container,
 .carousel,
-.carousel-item,
-.button-container,
-.carousel-button {
+.carousel-item {
     box-sizing: border-box;
 }
 
@@ -16,9 +14,14 @@
 .flash-sales-container {
     position: relative;
     bottom: 300px;
-    left: 90px;
+    left: 80px;
     margin: 0 auto;
     white-space: nowrap;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight:300;
+    font-size: 16px;
+
 }
 
 .carousel-track {
@@ -38,43 +41,42 @@
     white-space: normal;
 }
 
-.carousel-item h3 {
-    margin: 10px 0;
+.carousel-title{
     font-size: 1.2rem;
-    word-wrap: break-word;
-}
-
-.carousel-item p {
-    margin: 5px 0;
-    font-size: 1rem;
-    color: red;
-}
-
-.containe-button {
     display: flex;
     position: relative;
-    left: 66rem;
-    gap: 10px;
-    margin-bottom: 20px;
+    text-align:left;
 }
 
-.carousel-button {
+.precio {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #eeeeee;
-    color: #807f7f;
-    border: none;
-    width: 46px;
-    height: 46px;
-    cursor: pointer;
-    font-size: 40px;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    position: relative;
+    text-align: center;
+    color: #DB4444;
 
+}
+.antes{
+    display: inline-flex;
+    position: relative;
+    bottom: 52px;
+    font-size: 14px;
+    right: end;
+    color: gray;
+    text-decoration: line-through;
+}
 .img-flash {
-    width: 100%;
-    height: auto;
+    width: 270px;
+    height: 250px;
     border-radius: 4px;
+}
+.flash-sales-container::after{
+    content: '';
+    display: flex;
+    position: relative;
+    width: 85%; 
+    left: 0.8rem;
+    height: 1.5px; 
+    background-color: #000000; 
+    margin-top: 4rem; 
+    opacity: 30%;
 }

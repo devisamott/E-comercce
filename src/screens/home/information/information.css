@@ -1,0 +1,111 @@
+.container-information {
+    background-color: black;
+    width: 1440px;
+    height: 440px;
+    font-family: "Poppins", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+.container-children {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    color: aliceblue;
+    height: 236px;
+    width: 1170px;
+    top: 80px;
+    left: 70px;
+    gap: 70px;
+}
+.form-information {
+    display: flex;
+    position: relative;
+}
+.form-information input {
+    background: none;
+    border: 1.8px solid white;
+    color: aliceblue;
+    font-size: 16px;
+    border-radius: 4px;
+    width:217px;
+    height: 40px;
+}
+.form-information ::placeholder {
+    display: flex;
+    position: relative;
+    left: 12px;
+    font-size: 16px;
+    opacity: 40%;
+}
+.container-exclusive h2, .container-exclusive h3 {
+    margin-bottom: 10px;
+}
+.container-exclusive p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.botton-information {
+    position: absolute;
+    right: 10px;
+    top: 25%;
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+.container-support {
+    width: 190px;
+}
+.container-account ul,
+.container-quick ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 133px;
+    height: 184px;
+}
+.container-account ul li,
+.container-quick ul li {
+    list-style: none;
+    list-style-type: none;
+    list-style-position: none;
+    list-style: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.app-download-container  {
+    display: flex;
+    width: 200px;
+    height: 84px;
+}
+.container-download h3 {
+    margin-bottom: 10px;
+}
+.container-download p {
+    margin-bottom: 15px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.qr {
+    width: 90px;
+    height: 90px;
+}
+.google { 
+    display: flex;
+    position: relative;
+    bottom: 5px;
+    left: 10px;
+    width: 140px;
+    height: 100px;
+}
+.social-icons {
+    display: flex;
+    position: relative;
+    justify-content: start;
+    gap: 20px;
+    width: 175px;
+    height: 30px;
+    margin-top: 15px;
+}

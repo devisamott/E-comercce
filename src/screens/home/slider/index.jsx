@@ -1,32 +1,44 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { DataContext } from '../../../provider/index';
 import './slider.css';
 
 export function Slider() {
-    const { currentIndex, setCurrentIndex, firstProducts } = useContext(DataContext);
+    const { currentIndex, setCurrentIndex, shopNowProducts } = useContext(DataContext);
+    
+    useEffect(() => {
+        if (shopNowProducts.length > 0) {
+            const intervalId = setInterval(() => {
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % shopNowProducts.length);
+            }, 3000);
 
+            return () => clearInterval(intervalId);
+        }
+    }, [shopNowProducts.length, setCurrentIndex]);
+    
 
-    if (!firstProducts || firstProducts.length === 0) {
+    if (!shopNowProducts || shopNowProducts.length === 0) {
         return <div>Loading...</div>;
     }
 
-    const currentProduct = firstProducts[currentIndex];
-    const imageUrl = currentProduct.category.image
+
+    const currentProduct = shopNowProducts[currentIndex];
+    const imageUrl = currentProduct.imagen;
 
     return (
         <div className="slider">
             <img 
                 src={imageUrl} 
-                alt={currentProduct.title} 
+                alt={currentProduct.titulo} 
             />
             <div className="navigation-dots">
-                {firstProducts.map((_, index) => (
+                {shopNowProducts.map((_, index) => (
                     <span
-                        key={index}
-                        className={`dot ${currentIndex % firstProducts.length === index ? 'active' : ''}`}
-                        onClick={() => setCurrentIndex(index)}
+                    key={index}
+                    className={`dot ${currentIndex % shopNowProducts.length === index ? 'active' : ''}`}
+                    onClick={() => setCurrentIndex(index)}
                     ></span>
                 ))}
+                <button className='button-shop-now'>Shop Now  ⟶</button>
             </div>
         </div>
     );
