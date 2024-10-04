@@ -1,0 +1,18 @@
+.view {
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgb(230, 230, 230);
+    
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.eye {
+    cursor: pointer;
+}
+.container-view:hover .view {
+    background-color: rgb(255, 255, 255);
+}

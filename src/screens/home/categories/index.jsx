@@ -9,6 +9,8 @@ export function Categories() {
         { text: 'Furniture', img: 'src/screens/home/imgs/furniture.svg' },
         { text: 'Shoes', img: 'src/screens/home/imgs/sneakers.svg' },
         { text: 'Miscellaneous', img: 'src/screens/home/imgs/miscellaneous.svg' },
+        { text: 'Smartwatch', img: 'src/screens/home/imgs/smartwatch.svg' },
+
     ];
 
     const [index, setIndex] = useState(0);

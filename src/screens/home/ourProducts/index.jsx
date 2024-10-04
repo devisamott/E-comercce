@@ -3,6 +3,9 @@ import { BotonArrows } from '../botonArrows';
 import { useContext, useState } from 'react';
 import { DataContext } from '../../../provider';
 import { BotonAllProducts } from '../botonAllProducts';
+import { WishList } from '../../../components/wishList';
+import { ViewProduct } from '../../../components/viewProduct';
+import { AddToCart } from '../../../components/addToCart';
 
 export function OurProducts() {
     const { ourProducts } = useContext(DataContext);
@@ -19,7 +22,7 @@ export function OurProducts() {
     };
 
     return (
-        <div className='container-categories-wrapper'>
+        <section className='container-categories-wrapper'>
             <div
                 className='container-our-products'
                 style={{
@@ -30,7 +33,7 @@ export function OurProducts() {
                 <BotonArrows direction="left" onClick={handleMoveLeft} />
                 <BotonArrows direction="right" onClick={handleMoveRight} />
             </div> 
-                <div className='cuadro-our-products'></div>
+                <article className='cuadro-our-products'></article>
                 <p className='name-section'>Our Products</p>
                 <h1 className='description-section'>Explore Our Products</h1>
                 <div className='products-horizontal'>
@@ -39,21 +42,40 @@ export function OurProducts() {
                             className='container-img-our-products' 
                             key={product._id}
                         >
-                            <img 
-                                className='img-our-products'
-                                src={product.imagen} 
-                                alt={product.titulo} 
-                            />
+
+                            <article className='whistList2'>
+                                <WishList/>
+                            </article>
+
+                            <article className='container-ourProducts'>
+                                <img 
+                                    className='img-our-products'
+                                    src={product.imagen} 
+                                    alt={product.titulo} 
+                                />
+
+                                <article className='addToCart2'>
+                                    <AddToCart/>
+                                </article>
+
+                            </article>
+
+                            <article className='viewProductos2'>
+                                <ViewProduct/>
+                            </article>
+
                             <p>{product.titulo}</p>
                             <p className='price-this-mont'>$ {product.precio}</p>
                         </div>
                     ))}
+                    
                     <div className='container-boton-all'>
                         <BotonAllProducts/>
                     </div>
+
                 </div>
                 
             </div>
-        </div>
+        </section>
     );
 }

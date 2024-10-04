@@ -1,7 +1,16 @@
 .favorite {
+    width: 34px;
+    height: 34px;
     display: flex;
-    position: relative;
-    top: 0.5rem;
-    left: 680px;
+    align-self:flex-end;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+} 
+.heart{
     cursor: pointer;
+}
+.container-favorite:hover .favorite {
+    background-color: rgb(253, 253, 253);
+
 }

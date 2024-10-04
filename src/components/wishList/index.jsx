@@ -1,11 +1,12 @@
-import heart from '../wishList/heart.svg';
+import heart from '/src/components/wishList/heart.svg';
 import './wishList.css'
 
 export function WishList  () {
     return(
-        <div className='favorite'>
-            <img className="heart" src={heart} alt=""/>
-        </div>
-
-    ) 
+        <article className='container-favorite'>
+            <div className='favorite'>
+                <img className="heart" src={heart} alt=""/>
+            </div>
+        </article>
+    )
 }

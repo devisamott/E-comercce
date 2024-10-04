@@ -13,9 +13,11 @@ export function HeadBoard() {
                 <p>About</p>
                 <p>Sign up</p>
             </div>
-                <WishList/>
+            <section className='section-head'>
                 <Search/>
+                <WishList/>
                 <ShoppingCart/>
+            </section>
         </div>
     );
 }

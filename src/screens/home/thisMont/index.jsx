@@ -1,6 +1,9 @@
 import { useContext } from 'react';
 import { DataContext } from '../../../provider';
 import './thisMont.css';
+import { WishList } from '../../../components/wishList';
+import { ViewProduct } from '../../../components/viewProduct';
+import { AddToCart } from '../../../components/addToCart';
 
 export function ThisMont () {
   const { thisMonth: thisMont = [] } = useContext(DataContext);
@@ -14,22 +17,34 @@ export function ThisMont () {
             <button className='boton-this-mont'>View All</button>
         </div>
         <div className="product-list">
-          {thisMont && thisMont.length > 0 ? (
-            thisMont.map((product) => (
+          {thisMont.map((product) => (
               <div className="conteiner-products-this-mont" key={product._id}>
-                <img
-                  className="img-flash"
-                  src={product.imagen}
-                  alt={product.titulo}
-                />
+
+                <article className='whistList2'>
+                  <WishList/>
+                </article>
+
+                <article className='container-product-image'>
+                  <img
+                    className="img-flash"
+                    src={product.imagen}
+                    alt={product.titulo}
+                  />
+
+                  <article className='addToCart2'>
+                    <AddToCart/>
+                  </article>
+                </article>
+
+                <article className='viewProductos2'>
+                  <ViewProduct/>
+                </article>
+
                 <h3>{product.titulo}</h3>
                 <p className="price-this-mont">${product.precio}</p>
                 <p className='before'>${product.antes}</p>
               </div>
-            ))
-          ) : (
-            <p>No hay productos disponibles.</p>
-          )}
+          ))}
         </div>
     </div>
   );

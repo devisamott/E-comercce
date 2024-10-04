@@ -3,6 +3,9 @@ import { DataContext } from '../../../../provider/index';
 import { BotonAllProducts } from '../../botonAllProducts';
 import { BotonArrows } from '../../botonArrows';
 import './carouseFlashSales.css';
+import { WishList } from '../../../../components/wishList';
+import { ViewProduct } from '../../../../components/viewProduct';
+import { AddToCart } from '../../../../components/addToCart';
 
 export function CarouselFashSales() {
   const { onSaleProducts } = useContext(DataContext);
@@ -47,32 +50,45 @@ export function CarouselFashSales() {
   };
 
   return (
-    <div className='flash-sales-container'> 
-      <div>
-        <BotonArrows direction="left" onClick={() => handleMove('left')} />
-        <BotonArrows direction="right" onClick={() => handleMove('right')} />
-      </div>
-      <div className="carousel"> 
-        <div
-          className='carousel-track'
+    <section className="flash-sales-container">
+      <BotonArrows direction="left" onClick={() => handleMove('left')} />
+      <BotonArrows direction="right" onClick={() => handleMove('right')} />
+      
+      <div className="carousel">
+        <div 
+          className="carousel-track"
           ref={trackRef}
           style={{ '--index': index, '--visible-items': visibleItems }}
         >
           {allProducts.map((product) => (
-            <div className="carousel-item" key={product._id}>
-              <img
-                className="img-flash"
-                src={product.imagen}
-                alt={product.titulo}
-              />
-              <h3 className='carousel-title'>{product.titulo}</h3>
-              <p className='precio'>$ {product.precio}</p>
-              <p className='antes'>$ {product.antes} </p>
-            </div>
+            <article className="carousel-item" key={product._id}>
+
+              <article className='whisList'>
+                <WishList />
+              </article>
+
+              <article className="product-image-container">
+                <img className="img-flash" src={product.imagen} alt={product.titulo} />
+                
+                <div className="addToCart-today">
+                  <AddToCart />
+                </div>
+              </article>
+
+              <article className='viewProductos-today'>
+                <ViewProduct/>
+              </article>
+
+              <h3 className="carousel-title">{product.titulo}</h3>
+              <p className="precio">$ {product.precio}</p>
+              <p className="antes">$ {product.antes}</p>
+
+            </article>
           ))}
         </div>
       </div>
+      
       <BotonAllProducts />
-    </div>
+    </section>
   );
 }

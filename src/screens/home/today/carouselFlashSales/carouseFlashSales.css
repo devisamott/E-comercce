@@ -3,57 +3,71 @@
 .carousel-item {
     box-sizing: border-box;
 }
+.whisList{
+    top: 30px;
+    right: 15px;
+    z-index: 2;
+    border-radius: 50%;
+    position: absolute;    
+    background-color: rgb(230, 230, 230);
 
-.container,
-.carousel,
-.carousel-item {
-    width: 100%;
-    overflow: hidden;
 }
+.viewProductos-today{
+    top: 80px;
+    z-index: 1;  
+    right: 50px;
+    position: absolute;
 
+}
+.product-image-container {
+    position: relative;
+}
+.addToCart-today{
+    opacity: 0;
+    bottom: 48px;
+    visibility: hidden;
+    position: relative;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.product-image-container:hover .addToCart-today {
+    opacity: 1;
+    visibility: visible;
+}
 .flash-sales-container {
     position: relative;
     bottom: 300px;
     left: 80px;
-    margin: 0 auto;
-    white-space: nowrap;
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight:300;
     font-size: 16px;
 
 }
-
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
     transform: translateX(calc(var(--index) * -100% / var(--visible-items)));
 }
-
 .carousel-track.no-transition {
     transition: none;
 }
-
 .carousel-item {
     min-width: 20%;
     padding: 20px 10px;
     text-align: center;
-    white-space: normal;
+    position: relative;
 }
-
 .carousel-title{
     font-size: 1.2rem;
     display: flex;
     position: relative;
     text-align:left;
 }
-
 .precio {
     display: flex;
     position: relative;
     text-align: center;
     color: #DB4444;
-
 }
 .antes{
     display: inline-flex;
@@ -65,7 +79,7 @@
     text-decoration: line-through;
 }
 .img-flash {
-    width: 270px;
+    width: 255px;
     height: 250px;
     border-radius: 4px;
 }
@@ -73,10 +87,9 @@
     content: '';
     display: flex;
     position: relative;
-    width: 85%; 
+    width: 85%;
     left: 0.8rem;
-    height: 1.5px; 
-    background-color: #000000; 
-    margin-top: 4rem; 
+    height: 1.9px;
+    background-color: #000000;
     opacity: 30%;
 }

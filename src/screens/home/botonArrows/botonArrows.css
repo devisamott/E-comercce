@@ -5,13 +5,12 @@
     margin-bottom: 20px;
 
 }
-
 .carousel-button {
     display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
-    background-color: #eeeeee;
+    background-color: #F5F5F5;
     color: #5c5c5c;
     border: none;
     width: 46px;

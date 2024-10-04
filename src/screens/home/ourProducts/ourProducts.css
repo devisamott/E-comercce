@@ -7,9 +7,24 @@
 .products-horizontal {
     display: grid;
     grid-template-columns: repeat(4, 3fr);
-    gap: 23px;
+    gap: 44px;
     grid-auto-rows: 350px;
     width:100px;
+}
+.whistList2{
+    top: 14px;
+    z-index: 1;
+    right: 14px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(230, 230, 230);
+}
+.container-ourProducts{
+    position: relative;
+}
+.container-ourProducts:hover .addToCart2 {
+    opacity: 1;
+    visibility: visible;
 }
 .container-img-our-products {
     display: flex;
@@ -17,11 +32,10 @@
     flex-direction: column;
     bottom: 100px;
     left: 100px;
-    cursor: pointer;
 }
 .img-our-products {
-    width: 270px;
-    height: 230px;
+    width: 255px;
+    height: 200px;
     border-radius: 4px;
 }
 .cuadro-our-products{
@@ -45,7 +59,7 @@
     left: 130px;
     color: #DB4444;
 }
-.description-section{
+.description-section{ 
     position: relative;
     font-family: "Poppins", sans-serif;
     font-family: "Inter", sans-serif;
@@ -53,7 +67,7 @@
     font-weight: 600;
     font-size: 35px;
     font-style: normal;
-    bottom: 152px;
+    bottom: 150px;
     left: 100px;
 }
 .botons-our-products{
@@ -61,11 +75,10 @@
     position: relative;
     top: 20px;
     left: 90px;
-    z-index: 100;
 }
 .container-boton-all{
     display: flex;
     position: relative;
     bottom: 50px;
     left: 90px;
-}
+} 
